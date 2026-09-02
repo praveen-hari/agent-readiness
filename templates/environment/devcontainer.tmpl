@@ -1,0 +1,20 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "image": "{{BASE_IMAGE}}",
+  "features": {
+    {{DEVCONTAINER_FEATURES}}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        {{EXTENSIONS}}
+      ],
+      "settings": {
+        {{SETTINGS}}
+      }
+    }
+  },
+  "postCreateCommand": "{{INSTALL_COMMAND}}",
+  "forwardPorts": [{{PORTS}}],
+  "remoteUser": "{{REMOTE_USER}}"
+}

@@ -1,0 +1,61 @@
+# Runbook — {{PROJECT_NAME}}
+
+## Quick Reference
+
+| Action | Command |
+|--------|---------|
+| Start application | `{{RUN_COMMAND}}` |
+| Run tests | `{{TEST_COMMAND}}` |
+| Deploy | `{{DEPLOY_COMMAND}}` |
+| Rollback | `{{ROLLBACK_COMMAND}}` |
+| View logs | `{{LOGS_COMMAND}}` |
+| Health check | `{{HEALTH_CHECK_URL}}` |
+
+## Incident Response
+
+### Application Not Responding
+
+1. Check health endpoint: `{{HEALTH_CHECK_URL}}`
+2. Check logs: `{{LOGS_COMMAND}}`
+3. Check resource usage (CPU, memory, disk)
+4. If unresponsive: restart the service
+5. If persists: rollback to last known good deploy
+
+### Database Issues
+
+1. Check connection: `{{DB_CHECK_COMMAND}}`
+2. Check slow queries
+3. Check disk space
+4. If needed: failover to replica
+
+### High Error Rate
+
+1. Check error tracking dashboard
+2. Identify the most frequent error
+3. Check recent deploys for correlation
+4. If deploy-related: rollback
+
+## Deployment
+
+### Normal Deploy
+```bash
+{{DEPLOY_COMMAND}}
+```
+
+### Rollback
+```bash
+{{ROLLBACK_COMMAND}}
+```
+
+### Verification
+After deploy, verify:
+- [ ] Health endpoint returns 200
+- [ ] No new errors in error tracking
+- [ ] Key user flows work (smoke test)
+
+## Monitoring
+
+- **Application metrics**: {{METRICS_URL}}
+- **Error tracking**: {{ERROR_TRACKING_URL}}
+- **Logs**: {{LOGS_URL}}
+- **Alerts**: {{ALERTS_URL}}
