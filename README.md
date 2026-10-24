@@ -73,6 +73,7 @@ Plus any remediation files generated (AGENTS.md, CI workflow, devcontainer, etc.
 
 ```
 agent-readiness/
+├── README.md                               # This file
 ├── SKILL.md                                # Entry point (6-step process)
 ├── references/
 │   ├── criteria-catalog.md                 # 50 criteria across 5 levels × 9 pillars
@@ -96,6 +97,10 @@ git clone <repo-url> ~/.agents/skills/agent-readiness
 # Or symlink
 ln -s /path/to/agent-readiness ~/.agents/skills/agent-readiness
 ```
+
+## Templates
+
+Each remediation is generated from a `.tmpl` file under `templates/`. `references/remediation-index.md` maps every criterion to the template (or manual guidance) that fixes it.
 
 ## License
 
